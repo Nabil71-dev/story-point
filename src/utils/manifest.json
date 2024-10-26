@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Story Point Calculator",
+    "description": "A project to calculate agile estimations.",
+    "version": "1.0",
+    "icons": {
+      "16": "./assets/agile_logo.png",
+      "48": "./assets/agile_logo.png",
+      "128": "./assets/agile_logo.png"
+    },
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": []
+  }
+  

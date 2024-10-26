@@ -1,0 +1,1 @@
+export const findLargest = (...nums: number[]): number => Math.max(...nums);
