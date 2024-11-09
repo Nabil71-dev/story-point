@@ -2,7 +2,7 @@
 #### Manifest V3
 
 ### Instant enjoy
-Download dis folder and it's containing data from [Drive Link](https://drive.google.com/drive/folders/1x1KNrOsbu8YOjcP2-G-U0_A0kG0wXq0b?usp=sharing).
+Download dis folder and it's containing data from [Drive Link](https://drive.google.com/drive/folders/1x1KNrOsbu8YOjcP2-G-U0_A0kG0wXq0b?usp=sharing), 
 and upload dist folder to your extension part
 
 ## Get start
