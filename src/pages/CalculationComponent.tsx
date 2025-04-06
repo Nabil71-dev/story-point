@@ -6,6 +6,7 @@ import InfoBasedCalculation from '../components/calculation/Infobased';
 import TimeBasedCalculation from '../components/calculation/TimeBased';
 import Result from '../components/results/Result';
 import { ResultBgColor } from '../utils/constant';
+import { resetCurrentResult } from '../service/result-type/reset.service';
 
 const CalculationComponent: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -18,6 +19,15 @@ const CalculationComponent: React.FC = () => {
     return ResultBgColor[result] || 'text-white';
   };
 
+  const handleCalculationType = (type: string) => {
+    resetCurrentResult(calculationType, dispatch);
+
+    if (type === 'info') {
+      dispatch(setCalculationType('info'));
+    } else if (type === 'time') {
+      dispatch(setCalculationType('time'));
+    }
+  }
 
   return (
     <div className="w-[92%] lg:w-1/2 md:w-[70%] py-10">
@@ -33,14 +43,14 @@ const CalculationComponent: React.FC = () => {
       <div className="flex space-x-4 mb-4">
         <button
           className={`p-2 text-md font-bold ${calculationType === 'info' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-400 hover:text-blue-300'}`}
-          onClick={() => dispatch(setCalculationType('info'))}
+          onClick={() => handleCalculationType('info')}
         >
           Info-based
         </button>
         
         <button
           className={`p-2 text-md font-bold ${calculationType === 'time' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-400 hover:text-blue-300'}`}
-          onClick={() => dispatch(setCalculationType('time'))}
+          onClick={() => handleCalculationType('time')}
         >
           Time-based
         </button>

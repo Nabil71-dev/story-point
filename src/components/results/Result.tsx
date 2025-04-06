@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../../app/store';
-import { calculateResultInfoBased, calculateResultTimeBased, resetResult } from '../../service/result-type/result.slice';
-import { resetInfoBased } from '../../service/info-based/info.slice';
-import { resetTimeBased } from '../../service/time-based/time.slice';
+import { calculateResultInfoBased, calculateResultTimeBased } from '../../service/result-type/result.slice';
+import { resetCurrentResult } from '../../service/result-type/reset.service';
 
 const Result: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -28,13 +27,7 @@ const Result: React.FC = () => {
   }, [calculationType, infoBase, timeBased, dispatch]);
 
   const handleReset = () => {
-    dispatch(resetResult());
-
-    if (calculationType === 'info') {
-      dispatch(resetInfoBased());
-    } else if (calculationType === 'time') {
-      dispatch(resetTimeBased());
-    }
+    resetCurrentResult(calculationType, dispatch);
   };
 
 
